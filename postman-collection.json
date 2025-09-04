@@ -1,12 +1,12 @@
 {
   "info": {
-    "_postman_id": "f6e17e7c-2345-6789-abcd-1234567890ef",
+    "_postman_id": "b24e567a-5678-1234-9012-f1a2b3c4d5e6",
     "name": "School Management API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
     {
-      "name": "Add New School",
+      "name": "Add School - Delhi Public School",
       "request": {
         "method": "POST",
         "header": [
@@ -17,34 +17,87 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"name\": \"Valley View Elementary\",\n    \"address\": \"100 School Road\",\n    \"latitude\": 40.7128,\n    \"longitude\": -74.0060\n}"
+          "raw": "{\n  \"name\": \"Delhi Public School\",\n  \"address\": \"Mathura Road, New Delhi\",\n  \"latitude\": 28.6139,\n  \"longitude\": 77.2090\n}"
         },
         "url": {
-          "raw": "https://school-management-inventory.onrender.com/addSchool",
+          "raw": "https://school-management-inventory-api.onrender.com/addSchool",
           "protocol": "https",
           "host": [
-            "school-management-inventory",
+            "school-management-inventory-api",
             "onrender",
             "com"
           ],
           "path": [
             "addSchool"
           ]
-        },
-        "description": "Adds a new school record to the database."
-      },
-      "response": []
+        }
+      }
     },
     {
-      "name": "List Schools by Proximity",
+      "name": "Add School - National Public School",
       "request": {
-        "method": "GET",
-        "header": [],
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"National Public School\",\n  \"address\": \"Indiranagar, Bengaluru\",\n  \"latitude\": 12.9716,\n  \"longitude\": 77.5946\n}"
+        },
         "url": {
-          "raw": "https://school-management-inventory.onrender.com/listSchools?user_latitude=40.7128&user_longitude=-74.0060",
+          "raw": "https://school-management-inventory-api.onrender.com/addSchool",
           "protocol": "https",
           "host": [
-            "school-management-inventory",
+            "school-management-inventory-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "addSchool"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Add School - Don Bosco High School",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Don Bosco High School\",\n  \"address\": \"Matunga, Mumbai\",\n  \"latitude\": 19.0760,\n  \"longitude\": 72.8777\n}"
+        },
+        "url": {
+          "raw": "https://school-management-inventory-api.onrender.com/addSchool",
+          "protocol": "https",
+          "host": [
+            "school-management-inventory-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "addSchool"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Schools",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://school-management-inventory-api.onrender.com/listSchools?user_latitude=28.7041&user_longitude=77.1025",
+          "protocol": "https",
+          "host": [
+            "school-management-inventory-api",
             "onrender",
             "com"
           ],
@@ -54,17 +107,17 @@
           "query": [
             {
               "key": "user_latitude",
-              "value": "40.7128"
+              "value": "28.7041",
+              "description": "Latitude of user (Delhi)"
             },
             {
               "key": "user_longitude",
-              "value": "-74.0060"
+              "value": "77.1025",
+              "description": "Longitude of user (Delhi)"
             }
           ]
-        },
-        "description": "Lists schools sorted by distance from user location."
-      },
-      "response": []
+        }
+      }
     }
   ]
 }
